@@ -38,6 +38,14 @@ input[type="checkbox"] {
   display: none;
 }
 
+.cardSmall .header {
+  flex-flow: column wrap;
+}
+
+.cardSmall .countSec {
+  position: absolute;
+}
+
 .grayBack {
   background: #DEDFDF;
 }
@@ -145,6 +153,25 @@ input[type="checkbox"] {
   display: flex;
 }
 
+.cardSmall:hover {
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.20);
+  transform: translateY(3px);
+}
+
+/* .cardSmall img {
+  height: 50px;
+  background: red;
+  width: 50px;
+} */
+
+.cardSmall h2 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1D1D1D;
+  letter-spacing: 0.26px;
+  text-align: center;
+  margin-top: 10px;
+}
 
 .card {
   background: #FFFFFF;
@@ -159,14 +186,14 @@ input[type="checkbox"] {
   height: 150px;
   order: 1;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .card .count {
   position: absolute;
-  margin-top: -40px;
+  margin-top: -25px;
   margin-right: -40px;
-  margin-left: 25px;
+  margin-left: 85px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.17);
 }
 
