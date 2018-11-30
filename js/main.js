@@ -48,3 +48,14 @@ $(document).on('click', '.helpBtn' , function(){
     $('body').append('<div class="blackBack"></div>')
     $('.blackBack').append('<div class="popUp"></div>')
 });
+
+$(document).on('click', 'label', function() {
+    let cnt = $(this).parent().get(0);
+    let classObj = $(this).hasClass("selected");
+    cnt = $(cnt).parent().get(0);
+    cnt = $(cnt).find(".count.pill").get(0);
+    cntObj = $(cnt);
+    cntVal = parseInt($(cnt).html());
+    cntVal = (classObj) ? cntVal + 1 : cntVal - 1;
+    cntObj.html(cntVal);
+});
