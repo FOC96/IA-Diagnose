@@ -30,17 +30,17 @@
     </div>
 
     <div class="cardContainer">
-      <div class="card cardExtended">
+      <div class="card cardExtended" id="tempCard">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
             <img src="./media/Icons/Temp.svg" alt="">
             <h2>Temperatura</h2>
           </div>
           <div class="flexRow flexEnd countSec">
-            <div class="count pill">
+            <div class="count pill" id="tempCount">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Guardar</button>
+            <button class="secondaryBtn hidden" name="button" id="saveTemp">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart hidden flexStretch">
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="card cardSmall">
+      <div class="card cardSmall" id="headCard">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
             <img src="./media/Icons/Upper.svg" alt="">
@@ -62,7 +62,7 @@
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Guardar</button>
+            <button class="secondaryBtn hidden" name="button" id="saveHead">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart symptomsContainer hidden">
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <div class="card cardSmall">
+      <div class="card cardSmall" id="noseCard">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
             <img src="./media/Icons/Nose.svg" alt="">
@@ -89,24 +89,24 @@
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Guardar</button>
+            <button class="secondaryBtn hidden" name="button" id="saveNose">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart symptomsContainer hidden">
-          <label class="pill default symptomPill" for="11">
+          <label class="pill default symptomPill" for="12">
             Síntoma 1
           </label>
-          <input type="checkbox" name="11" value="11" id="11">
+          <input type="checkbox" name="12" value="12" id="12">
 
-          <label class="pill default symptomPill" for="21">
+          <label class="pill default symptomPill" for="22">
             Síntoma 2
           </label>
-          <input type="checkbox" name="21" value="21" id="21">
+          <input type="checkbox" name="22" value="22" id="22">
 
         </div>
       </div>
 
-      <div class="card cardSmall">
+      <div class="card cardSmall" id="generalCard">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
             <img src="./media/Icons/General.svg" alt="">
@@ -116,19 +116,19 @@
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Guardar</button>
+            <button class="secondaryBtn hidden" name="button" id="saveGeneral">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart symptomsContainer hidden">
-          <label class="pill default symptomPill" for="11">
+          <label class="pill default symptomPill" for="13">
             Síntoma 1
           </label>
-          <input type="checkbox" name="11" value="11" id="11">
+          <input type="checkbox" name="13" value="13" id="13">
 
-          <label class="pill default symptomPill" for="21">
+          <label class="pill default symptomPill" for="23">
             Síntoma 2
           </label>
-          <input type="checkbox" name="21" value="21" id="21">
+          <input type="checkbox" name="23" value="23" id="23">
 
         </div>
       </div>

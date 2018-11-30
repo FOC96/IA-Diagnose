@@ -17,4 +17,25 @@ $(document).on('input', '.temp', function() {
     } else {
       $('#tempDesc').html("Temperatura normal");
     }
+    $('#tempCount').html("1");
+});
+
+$(document).on('click', '#saveTemp' , function(){
+    $("#tempCard").toggleClass('cardExtended')
+    $("#tempCard").toggleClass('cardSmall')
+});
+
+$(document).on('click', '#saveHead' , function(){
+    $("#headCard").toggleClass('cardExtended')
+    $("#headCard").toggleClass('cardSmall')
+});
+
+$(document).on('click', '#saveNose' , function(){
+    $("#noseCard").toggleClass('cardExtended')
+    $("#noseCard").toggleClass('cardSmall')
+});
+
+$(document).on('click', '#saveGeneral' , function(){
+    $("#generalCard").toggleClass('cardExtended')
+    $("#generalCard").toggleClass('cardSmall')
 });
