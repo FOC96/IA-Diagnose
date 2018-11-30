@@ -7,7 +7,7 @@
     <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body class="oneContent grayBack">
     <h1 class="txtRight">Diagnóstico de Enfermedades<br>aplicando Lógica Difusa</h1>
 
     <div class="flexRow flexEnd nameContainer">
@@ -33,51 +33,36 @@
       <div class="card cardExtended">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
-            <img src="" alt="">
+            <img src="./media/Icons/Temp.svg" alt="">
             <h2>Temperatura</h2>
           </div>
           <div class="flexRow flexEnd countSec">
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Comenzar</button>
+            <button class="secondaryBtn hidden" name="button">Guardar</button>
           </div>
         </div>
-        <div class="flexRow flexStart symptomsContainer hidden">
-          <label class="pill default symptomPill" for="1">
-            Síntoma 1
-          </label>
-          <input type="checkbox" name="1" value="1" id="1">
-
-          <label class="pill default symptomPill" for="2">
-            Síntoma 2
-          </label>
-          <input type="checkbox" name="2" value="2" id="2">
-
-          <label class="pill default symptomPill" for="3">
-            Síntoma 3
-          </label>
-          <input type="checkbox" name="3" value="3" id="3">
-
-          <label class="pill default symptomPill" for="4">
-            Síntoma 4
-          </label>
-          <input type="checkbox" name="4" value="4" id="4">
-
+        <div class="flexRow flexStart hidden flexStretch">
+          <input type="range" name="" value="" class="temp flexTwo" min="34" max="40" step="0.1">
+          <div class="dontGrow flexFour">
+            <p id="tempNum">35ºC</p>
+            <p id="tempDesc">Temperatura Alta</p>
+          </div>
         </div>
       </div>
 
       <div class="card cardSmall">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
-            <img src="" alt="">
+            <img src="./media/Icons/Upper.svg" alt="">
             <h2>Oídos, cuello y cabeza</h2>
           </div>
           <div class="flexRow flexEnd countSec">
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Comenzar</button>
+            <button class="secondaryBtn hidden" name="button">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart symptomsContainer hidden">
@@ -97,14 +82,14 @@
       <div class="card cardSmall">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
-            <img src="" alt="">
+            <img src="./media/Icons/Nose.svg" alt="">
             <h2>Vías respiratorias</h2>
           </div>
           <div class="flexRow flexEnd countSec">
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Comenzar</button>
+            <button class="secondaryBtn hidden" name="button">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart symptomsContainer hidden">
@@ -124,14 +109,14 @@
       <div class="card cardSmall">
         <div class="header flexSides flexRow">
           <div class="flexRow flexStart">
-            <img src="" alt="">
+            <img src="./media/Icons/General.svg" alt="">
             <h2>General</h2>
           </div>
           <div class="flexRow flexEnd countSec">
             <div class="count pill">
               0
             </div>
-            <button class="secondaryBtn hidden" name="button">Comenzar</button>
+            <button class="secondaryBtn hidden" name="button">Guardar</button>
           </div>
         </div>
         <div class="flexRow flexStart symptomsContainer hidden">
@@ -151,7 +136,9 @@
 
 
 
+    <div class="buttonsArea">
+      <button class="primaryBtn" name="button">Comenzar</button>
+    </div>
 
-    <button class="primaryBtn" name="button">Comenzar</button>
   </body>
 </html>

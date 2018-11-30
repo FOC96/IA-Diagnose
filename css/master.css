@@ -4,6 +4,20 @@
   margin: 0px;
   padding: 0px;
   font-family: 'Muli', sans-serif;
+  outline: none;
+}
+
+.oneContent {
+  min-width: 800px;
+  width: 85%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  min-height: 100%;
+  position: absolute;
+  padding: 1.5em;
+  box-sizing: border-box;
+  padding-bottom: 70px;
 }
 
 h1 {
@@ -47,7 +61,7 @@ input[type="checkbox"] {
 }
 
 .grayBack {
-  background: #DEDFDF;
+  background: #FAFAFA;
 }
 
 .txtRight {
@@ -72,6 +86,39 @@ input[type="checkbox"] {
 .flexSides {
   justify-content: space-between;
   align-items: center;
+}
+
+.flexStretch {
+  justify-content:space-between;
+  align-items: stretch;
+}
+
+.flexOne {
+  flex-basis: 100%;
+}
+
+.flexTwo {
+  flex-basis: 50%;
+  min-width: 100px;
+  flex-grow: 1;
+}
+
+.flexThree {
+  flex-basis: 33%;
+  min-width: 100px;
+}
+
+.flexFour {
+  flex-basis: 25%;
+  min-width: 100px;
+}
+
+.dontGrow {
+  flex-grow: 0;
+}
+
+.red {
+  background: red;
 }
 
 .pill {
@@ -158,11 +205,17 @@ input[type="checkbox"] {
   transform: translateY(3px);
 }
 
-/* .cardSmall img {
-  height: 50px;
-  background: red;
-  width: 50px;
-} */
+.cardSmall .header div:first-child {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardSmall img {
+  height: 70px;
+  width: 70px;
+}
 
 .cardSmall h2 {
   font-weight: 400;
@@ -215,7 +268,6 @@ input[type="checkbox"] {
 .cardExtended .header div img {
   height: 25px;
   width: 25px;
-  background: gray;
   margin-right: 10px;
 }
 
@@ -247,7 +299,7 @@ input[type="checkbox"] {
 
 .secondaryBtn {
   border: 1px solid #A1A1A1;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 16px;
   color: #A1A1A1;
   letter-spacing: 0.3px;
@@ -269,4 +321,46 @@ input[type="checkbox"] {
   border: 1px solid #1D1D1D;
   color: white;
   background: #1D1D1D;
+}
+
+.buttonsArea {
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: linear-gradient(-180deg, rgba(250,250,250,0.00) 0%, #FAFAFA 68%);
+}
+
+.temp::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #5EDDFF 28%, #30FF00 31%, #64EF00 50%, #FFC000 60%, #FF0000 100%);
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+}
+
+.temp::-webkit-slider-thumb {
+  height: 30px;
+  width: 30px;
+  background: url(../media/thumb.svg) no-repeat;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 8px;
+}
+
+.temp {
+  -webkit-appearance: none;
+  margin: 5px 10px 20px 5px;
+}
+
+#tempNum {
+  font-size: 20px;
 }
