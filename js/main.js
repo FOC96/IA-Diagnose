@@ -39,3 +39,12 @@ $(document).on('click', '#saveGeneral' , function(){
     $("#generalCard").toggleClass('cardExtended')
     $("#generalCard").toggleClass('cardSmall')
 });
+
+$(document).on('click', '#startBtn' , function(){
+    location.assign('data.html')
+});
+
+$(document).on('click', '.helpBtn' , function(){
+    $('body').append('<div class="blackBack"></div>')
+    $('.blackBack').append('<div class="popUp"></div>')
+});

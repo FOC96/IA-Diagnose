@@ -1,143 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>IA Diagnose</title>
-    <link rel="stylesheet" href="css/master.css">
-    <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+    <title>IA</title>
+    <link rel="stylesheet" href="./css/master.css">
+    <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="./js/main.js" charset="utf-8"></script>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   </head>
-  <body class="oneContent grayBack">
-    <h1 class="txtRight">Diagnóstico de Enfermedades<br>aplicando Lógica Difusa</h1>
+  <body>
 
-    <div class="flexRow flexEnd nameContainer">
-      <div class="pill namePill">
-        <img src="" alt="">
-        Enrique Aguilar Orozco
-      </div>
-      <div class="pill namePill">
-        <img src="" alt="">
-        Sarai de Jesús Gil Ramos
-      </div>
-      <div class="pill namePill">
-        <img src="" alt="">
-        Fernando Ortiz Rico Celio
-      </div>
-      <div class="pill namePill">
-        <img src="" alt="">
-        Alberto Torres Mayorga
-      </div>
+    <div class="medBack">
     </div>
 
-    <div class="cardContainer">
-      <div class="card cardExtended" id="tempCard">
-        <div class="header flexSides flexRow">
-          <div class="flexRow flexStart">
-            <img src="./media/Icons/Temp.svg" alt="">
-            <h2>Temperatura</h2>
-          </div>
-          <div class="flexRow flexEnd countSec">
-            <div class="count pill" id="tempCount">
-              0
-            </div>
-            <button class="secondaryBtn hidden" name="button" id="saveTemp">Guardar</button>
-          </div>
-        </div>
-        <div class="flexRow flexStart hidden flexStretch">
-          <input type="range" name="" value="" class="temp flexTwo" min="34" max="40" step="0.1">
-          <div class="dontGrow flexFour">
-            <p id="tempNum">35ºC</p>
-            <p id="tempDesc">Temperatura Alta</p>
-          </div>
-        </div>
-      </div>
+    <div class="oneContent">
+      <h1 class="txtRight">Diagnóstico de Enfermedades<br>aplicando Lógica Difusa</h1>
 
-      <div class="card cardSmall" id="headCard">
-        <div class="header flexSides flexRow">
-          <div class="flexRow flexStart">
-            <img src="./media/Icons/Upper.svg" alt="">
-            <h2>Oídos, cuello y cabeza</h2>
-          </div>
-          <div class="flexRow flexEnd countSec">
-            <div class="count pill">
-              0
-            </div>
-            <button class="secondaryBtn hidden" name="button" id="saveHead">Guardar</button>
-          </div>
+      <div class="flexRow flexEnd nameContainer">
+        <div class="pill namePill">
+          <img src="https://avatars3.githubusercontent.com/u/20671244?s=400&v=4" alt="">
+          Enrique Aguilar Orozco
         </div>
-        <div class="flexRow flexStart symptomsContainer hidden">
-          <label class="pill default symptomPill" for="11">
-            Síntoma 1
-          </label>
-          <input type="checkbox" name="11" value="11" id="11">
-
-          <label class="pill default symptomPill" for="21">
-            Síntoma 2
-          </label>
-          <input type="checkbox" name="21" value="21" id="21">
-
+        <div class="pill namePill">
+          <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/37921873_1998529450198383_88680938539581440_n.jpg?_nc_cat=106&_nc_ht=scontent-dfw5-1.xx&oh=c90ca3222a496bcec6fc496d92bcf36e&oe=5C730C7C" alt="">
+          Sarai de Jesús Gil Ramos
+        </div>
+        <div class="pill namePill">
+          <img src="https://avatars2.githubusercontent.com/u/17556856?s=400&u=85a2c1fad5ef210f4adfd8043ee8597ea9d98301&v=4" alt="">
+          Fernando Ortiz Rico Celio
+        </div>
+        <div class="pill namePill">
+          <img src="https://avatars2.githubusercontent.com/u/20080282?s=400&v=4" alt="">
+          Alberto Torres Mayorga
         </div>
       </div>
 
-      <div class="card cardSmall" id="noseCard">
-        <div class="header flexSides flexRow">
-          <div class="flexRow flexStart">
-            <img src="./media/Icons/Nose.svg" alt="">
-            <h2>Vías respiratorias</h2>
-          </div>
-          <div class="flexRow flexEnd countSec">
-            <div class="count pill">
-              0
-            </div>
-            <button class="secondaryBtn hidden" name="button" id="saveNose">Guardar</button>
-          </div>
-        </div>
-        <div class="flexRow flexStart symptomsContainer hidden">
-          <label class="pill default symptomPill" for="12">
-            Síntoma 1
-          </label>
-          <input type="checkbox" name="12" value="12" id="12">
-
-          <label class="pill default symptomPill" for="22">
-            Síntoma 2
-          </label>
-          <input type="checkbox" name="22" value="22" id="22">
-
-        </div>
+      <div class="buttonsArea">
+        <button class="primaryBtn" name="button" id="startBtn">Comenzar</button>
       </div>
-
-      <div class="card cardSmall" id="generalCard">
-        <div class="header flexSides flexRow">
-          <div class="flexRow flexStart">
-            <img src="./media/Icons/General.svg" alt="">
-            <h2>General</h2>
-          </div>
-          <div class="flexRow flexEnd countSec">
-            <div class="count pill">
-              0
-            </div>
-            <button class="secondaryBtn hidden" name="button" id="saveGeneral">Guardar</button>
-          </div>
-        </div>
-        <div class="flexRow flexStart symptomsContainer hidden">
-          <label class="pill default symptomPill" for="13">
-            Síntoma 1
-          </label>
-          <input type="checkbox" name="13" value="13" id="13">
-
-          <label class="pill default symptomPill" for="23">
-            Síntoma 2
-          </label>
-          <input type="checkbox" name="23" value="23" id="23">
-
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="buttonsArea">
-      <button class="primaryBtn" name="button">Comenzar</button>
     </div>
 
   </body>

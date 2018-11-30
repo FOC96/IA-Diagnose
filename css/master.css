@@ -25,6 +25,7 @@ h1 {
   font-size: 28px;
   color: #1D1D1D;
   letter-spacing: 0.52px;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -64,6 +65,17 @@ input[type="checkbox"] {
   background: #FAFAFA;
 }
 
+.medBack {
+  background: url(../media/backMed.jpg) no-repeat;
+  background-size: cover;
+  background-position: left;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  margin: 0px;
+}
+
 .txtRight {
   text-align: right;
 }
@@ -73,9 +85,14 @@ input[type="checkbox"] {
   flex-flow: row wrap;
 }
 
+.flexCols {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .flexEnd {
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .flexStart {
@@ -138,6 +155,8 @@ input[type="checkbox"] {
   flex-shrink: 0;
   -webkit-user-select:none;
   user-select:none;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .pill img {
@@ -174,6 +193,9 @@ input[type="checkbox"] {
 
 .nameContainer {
   width: 500px;
+  float: right;
+  margin-right: -5px;
+  margin-top: 20px;
 }
 
 .symptomsContainer {
@@ -363,4 +385,62 @@ input[type="checkbox"] {
 
 #tempNum {
   font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .oneContent {
+    min-width: 100%;
+  }
+
+  .nameContainer {
+    width: 100%;
+  }
+}
+
+.helpBtn {
+  width: 30px;
+  flex-shrink: 0;
+  border: none;
+  background: url(../media/Icons/info.svg) no-repeat;
+  background-size: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.blackBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 80;
+  overflow: scroll;
+}
+
+@keyframes fadeIn {
+  0% {
+    background: rgba(0, 0, 0, 0.0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.popUp {
+  width: 80%;
+  margin: auto;
+  top: 10px;
+  height: 800px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.17);
+  left: 0;
+  right: 0;
 }
