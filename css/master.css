@@ -35,6 +35,13 @@ h2 {
   letter-spacing: 0.37px;
 }
 
+h3 {
+  font-weight: 800;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0.3px;
+}
+
 label {
   font-weight: 600;
   font-size: 14px;
@@ -430,7 +437,7 @@ input[type="checkbox"] {
   width: 80%;
   margin: auto;
   top: 10px;
-  height: 800px;
+  /* height: 800px; */
   margin-bottom: 30px;
   margin-top: 30px;
   position: absolute;
@@ -440,6 +447,8 @@ input[type="checkbox"] {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.17);
   left: 0;
   right: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .closeBtn {
@@ -452,8 +461,57 @@ input[type="checkbox"] {
   background: url(../media/Icons/close.svg) no-repeat;
   border: none;
   cursor: pointer;
+  z-index: 89;
 }
 
 .topBar {
   margin-bottom: 50px;
+}
+
+.flexForm {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  height: 40px;
+}
+
+td {
+  height: 40px;
+}
+
+.tableHeader {
+  background: #DEDFDF;
+  font-family: 700;
+  font-size: 14px;
+  color: #1D1D1D;
+  letter-spacing: 0.26px;
+  text-align: center;
+  border-spacing: none;
+}
+
+.diseasesTable tr td:last-child {
+  border-bottom: 1px solid #DEDFDF;
+}
+
+.diseasesTable tr td:first-child, .sympTable tr td:first-child {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.sympTable tr td {
+  border-bottom: 1px solid #DEDFDF;
+}
+
+a {
+  color: #00A6B0;
+  font-weight: 700;
+  text-decoration: none;
 }
