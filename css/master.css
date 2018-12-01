@@ -318,6 +318,18 @@ input[type='checkbox'] {
   box-sizing: border-box;
 }
 
+.primaryBtn.action {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.primaryBtn.action.disabled {
+  background: #959595;
+}
+
 .secondaryBtn {
   border: 1px solid #a1a1a1;
   border-radius: 8px;
@@ -562,4 +574,34 @@ input[type='checkbox'] {
 
 .topBar {
   margin-bottom: 50px;
+}
+
+.diagnosis {
+  position: relative;
+  left: calc(50% - 350px);
+  width: 700px;
+  padding: 22px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px 2px rgba(197, 197, 197, 0.5);
+}
+
+.diagnosis > h2 {
+  font-size: 21px;
+}
+
+.diagnosis > h2 + p {
+  color: #40a9e8;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.diagnosis > h3 {
+  color: #a1a1a1;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
+.diagnosis > h3 + p {
+  text-align: justify;
 }
