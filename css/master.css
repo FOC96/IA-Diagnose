@@ -422,6 +422,7 @@ input[type="checkbox"] {
   max-height: 100%;
   z-index: 80;
   overflow: scroll;
+  transition: 0.6s;
 }
 
 @keyframes fadeIn {
@@ -433,15 +434,71 @@ input[type="checkbox"] {
   }
 }
 
+@keyframes slideUp {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes slideBtnUp {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 60px;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes slideBtnDown {
+  0% {
+    top: 60px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.out {
+  animation: fadeOut !important;
+  animation-play-state: running;
+  animation-duration: 1s;
+}
+
+.out .popUp {
+  animation: slideDown !important;
+  animation-duration: 1s;
+}
+
+.out .closeBtn {
+  animation: slideDown !important;
+  animation-duration: 1s;
+}
+
 .popUp {
   width: 80%;
-  margin: auto;
-  top: 10px;
-  /* height: 800px; */
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin: 30px auto;
   position: absolute;
-  background: white;
   border-radius: 8px;
   background: #FFFFFF;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.17);
@@ -449,6 +506,8 @@ input[type="checkbox"] {
   right: 0;
   padding: 20px;
   box-sizing: border-box;
+  animation: slideUp;
+  animation-duration: 1s;
 }
 
 .closeBtn {
@@ -462,6 +521,8 @@ input[type="checkbox"] {
   border: none;
   cursor: pointer;
   z-index: 89;
+  animation: slideBtnUp;
+  animation-duration: 1s;
 }
 
 .topBar {
@@ -510,8 +571,41 @@ td {
   border-bottom: 1px solid #DEDFDF;
 }
 
+.sympTable tr th:first-child {
+  width: 45%;
+  max-width: 200px;
+}
+
+.sympTable {
+  table-layout: fixed;
+}
+
+.sympTable tr td:first-child {
+  width: 45%;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 a {
   color: #00A6B0;
   font-weight: 700;
   text-decoration: none;
+}
+
+.popUp h1 {
+  margin-bottom: 50px;
+}
+
+.popUp .nameCont {
+  margin-bottom: 40px;
+}
+
+.popUp h2 {
+  margin-top: 40px;
+}
+
+.popUp h3 {
+  margin-top: 30px;
 }

@@ -45,16 +45,13 @@ $(document).on('click', '#startBtn' , function(){
 });
 
 $(document).on('click', '.helpBtn' , function(){
-    $('body').append('<div class="blackBack"></div>')
-    $('.blackBack').append(
-      '<div class="popUp">'
-        +'<button class="closeBtn"></button>'
-      +'</div>'
-    )
+    $('.extra').load('popUp.html')
 });
 
 $(document).on('click', '.closeBtn' , function(){
-    $('body')
+    $('.blackBack').toggleClass('out');
+    setTimeout(function() {
+        $('.blackBack').remove();}, 1000);
 });
 
 $(document).on('click', 'label', function() {
