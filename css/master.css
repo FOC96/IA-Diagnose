@@ -693,6 +693,7 @@ input[type='checkbox'] {
 
 .diagnosis > h3 + p {
   text-align: justify;
+}
 
 .flexForm {
   display: flex;
