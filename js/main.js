@@ -41,12 +41,20 @@ $(document).on('click', '#saveGeneral' , function(){
 });
 
 $(document).on('click', '#startBtn' , function(){
-    location.assign('data.html')
+    location.assign('elements.html')
 });
 
 $(document).on('click', '.helpBtn' , function(){
     $('body').append('<div class="blackBack"></div>')
-    $('.blackBack').append('<div class="popUp"></div>')
+    $('.blackBack').append(
+      '<div class="popUp">'
+        +'<button class="closeBtn"></button>'
+      +'</div>'
+    )
+});
+
+$(document).on('click', '.closeBtn' , function(){
+    $('body')
 });
 
 $(document).on('click', 'label', function() {

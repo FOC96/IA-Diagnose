@@ -155,8 +155,6 @@ input[type="checkbox"] {
   flex-shrink: 0;
   -webkit-user-select:none;
   user-select:none;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
 }
 
 .pill img {
@@ -264,9 +262,8 @@ input[type="checkbox"] {
   transition: 0.4s;
 }
 
-.card .count {
+.cardSmall .count {
   position: absolute;
-  margin-top: -25px;
   margin-right: -40px;
   margin-left: 85px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.17);
@@ -443,4 +440,20 @@ input[type="checkbox"] {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.17);
   left: 0;
   right: 0;
+}
+
+.closeBtn {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  right: calc(10% + 20px);
+  top: 60px;
+  margin: auto;
+  background: url(../media/Icons/close.svg) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.topBar {
+  margin-bottom: 50px;
 }
