@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>IA | Diagnóstico</title>
+    <title>IA | Diagnóstico Específico</title>
     <link rel="stylesheet" href="./css/master.css" />
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_o5hd5vvqpoqiwwmi.css" />
     <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
@@ -17,8 +17,18 @@
       <div class="flexRow flexSides flexOne topBar">
         <button type="button" class="helpBtn"></button>
         <div class="flexTwo flexCols flexEnd">
-          <h1 class="right">Diagnóstico General</h1>
-          <p class="right">Con base en los síntomas, estos son tus resultados</p>
+          <h1 class="right">Diagnóstico Específico</h1>
+          <p class="right">Hemos analizado tus síntomas y las enfermedades que crees poder tener</p>
+        </div>
+      </div>
+
+      <div class="diagnosis">
+        <div class="header">
+          <div class="left">
+            <h2>Otra Enfermedad</h2>
+            <p>32% de probabilidad</p>
+          </div>
+          <div class="right"><button type="button" class="helpBtn"></button></div>
         </div>
       </div>
 
@@ -28,6 +38,7 @@
             <h2>Fiebre Escarlatina</h2>
             <p>50% de probabilidad</p>
           </div>
+          <div class="right"><button type="button" class="closeBtnHeader"></button></div>
         </div>
 
         <h3>¿Qué es?</h3>
@@ -57,9 +68,19 @@
         </p>
       </div>
 
+      <div class="diagnosis">
+        <div class="header">
+          <div class="left">
+            <h2>Otra Enfermedad</h2>
+            <p>12% de probabilidad</p>
+          </div>
+          <div class="right"><button type="button" class="helpBtn"></button></div>
+        </div>
+      </div>
+
       <div class="buttonsArea">
         <button class="primaryBtn action disabled"><i class="feather icon-chevron-left"></i></button>
-        <button class="primaryBtn" name="button" id="startBtn">Terminar</button>
+        <button class="primaryBtn" name="button" id="startBtn">Continuar</button>
       </div>
     </div>
   </body>
