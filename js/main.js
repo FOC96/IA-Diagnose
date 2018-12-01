@@ -55,6 +55,10 @@ $(document).on('click', '#aYouBtn' , function(){
   }
 });
 
+$(document).on('click', '.diseaseWrapper' , function(){
+    $(this).toggleClass('default');
+    $(this).toggleClass('selected');
+});
 
 
 $(document).on('click', '.helpBtn' , function(){
