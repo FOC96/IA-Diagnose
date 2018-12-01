@@ -601,15 +601,21 @@ input[type='checkbox'] {
 
 .genre > .radio-wrapper > label > input[type='radio']:checked + img {
   transform: scale(1.25);
+  background: #00A6B0 !important;
 }
 
-.genre > .radio-wrapper > label > input[type='radio'] + img.boy {
+.genre > .radio-wrapper > label > input[type='radio'] + img {
+  transform: scale(1);
+  background: white;
+}
+
+/* .genre > .radio-wrapper > label > input[type='radio'] + img.boy {
   background: white;
 }
 
 .genre > .radio-wrapper > label > input[type='radio'] + img.girl {
-  background: #45a7b1;
-}
+  background: white;
+} */
 
 .age > .radio-wrapper > label {
   display: inline-block;
@@ -704,6 +710,7 @@ input[type='checkbox'] {
 
 table {
   width: 100%;
+  border-spacing: 0px;
 }
 
 tr {
@@ -737,6 +744,10 @@ td {
   border-bottom: 1px solid #DEDFDF;
 }
 
+tr:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .sympTable tr th:first-child {
   width: 45%;
   max-width: 200px;
@@ -746,7 +757,7 @@ td {
   table-layout: fixed;
 }
 
-.sympTable tr td:first-child {
+.sympTable tr :first-child {
   width: 45%;
   max-width: 200px;
   text-overflow: ellipsis;

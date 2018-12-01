@@ -41,8 +41,21 @@ $(document).on('click', '#saveGeneral' , function(){
 });
 
 $(document).on('click', '#startBtn' , function(){
-    location.assign('elements.html')
+    location.assign('about_you.html')
 });
+
+$(document).on('click', '#aYouBtn' , function(){
+  name = $("#userName").val();
+
+  if (name == "") {
+    alert('No nos has dicho tu nombre 🙄');
+  } else {
+    location.assign('elements.html');
+    localStorage.setItem("name", name);
+  }
+});
+
+
 
 $(document).on('click', '.helpBtn' , function(){
     $('.extra').load('popUp.html')
