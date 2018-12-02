@@ -9,13 +9,24 @@ $(document).on('click', '.cardSmall' , function(){
 });
 
 $(document).on('input', '.temp', function() {
-    $('#tempNum').html( $(this).val() +"ºC");
-    if ($(this).val() < 36) {
-      $('#tempDesc').html("Temperatura baja");
-    } else if ($(this).val() > 38) {
-      $('#tempDesc').html("Temperatura alta");
+
+    let tempH = $('#tempH');
+    let tempL = $('#tempL');
+    let currentVal = $(this).val();
+
+    $('#tempNum').html( currentVal +"ºC");
+    if (currentVal < 36) {
+        $('#tempDesc').html("Temperatura baja");
+        tempH.val(0);
+        tempL.val(0.3);
+    } else if (currentVal > 38) {
+        $('#tempDesc').html("Temperatura alta");
+        tempH.val(0.8);
+        tempL.val(0);
     } else {
-      $('#tempDesc').html("Temperatura normal");
+        $('#tempDesc').html("Temperatura normal");
+        tempL.val(0);
+        tempH.val(0);
     }
     $('#tempCount').html("1");
 });
@@ -119,7 +130,18 @@ $(document).on('input', '.painLevel', function() {
 });
 
 $(document).on('click', '.primaryBtn', function(){
-    $('input:checked').each(function () {
-        console.log($(this).get(0));
+    let countSympts = $('input:checked').length;
+    // countSympts < 15 && alert('Selecciona al menos 15 sintomas 😬');
+    // if (countSympts < 15) return;
+    let arrayValuesSympts = [];
+    $('input[type=checkbox]').each(function () {
+        let sympt = $(this).get(0);
+        let index = parseInt(sympt.dataset.idsymp);
+        arrayValuesSympts[index] = sympt.value;
+    });
+    // console.table(arrayValuesSympts);
+
+    diagnostic(arrayValuesSympts, function(data){
+        console.table(data);
     });
 });
