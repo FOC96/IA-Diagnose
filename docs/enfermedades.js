@@ -16,7 +16,7 @@ let enfermedades = [
     {
         name: "Influenza estacional",
         symp: [0.7, 0.7, 1, 0, 0.8, 0, 0.7, 0.7, 0.7, 0, 0, 0, 0, 0, 0.6, 0, 0.3, 0.7, 0.7, 0.6, 0.3, 0.3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        sympDesc: ["Escurrimiento nasal",	"Congestión nasal",	"Fiebre",	"Tos con flemas",	"Tos seca",	"Disminución apetito",	"Dolor de cabeza",	"Dolor muscular",	"Dolor de garganta",	"Dolor alrededor de ojos, mejillas, nariz, frente",	"Reducción sentido del tacto/gusto",	"Dolor de oídos",	"Dolor mandíbula y dientes,"	"Mal aliento",	"Fatiga",	"Irritabilidad",	"Náuseas", "Cuerpo cortado",	"Escalofríos y sudoración",	"Debilidad",	"Vómito",	"Diarrea"],
+        sympDesc: ["Escurrimiento nasal",	"Congestión nasal",	"Fiebre",	"Tos con flemas",	"Tos seca",	"Disminución apetito",	"Dolor de cabeza",	"Dolor muscular",	"Dolor de garganta",	"Dolor alrededor de ojos, mejillas, nariz, frente",	"Reducción sentido del tacto/gusto",	"Dolor de oídos",	"Dolor mandíbula y dientes", "Mal aliento",	"Fatiga",	"Irritabilidad",	"Náuseas", "Cuerpo cortado",	"Escalofríos y sudoración",	"Debilidad",	"Vómito",	"Diarrea"],
         desc: "Es una infección viral de las vías respiratorias altas, las cuales incluyen la nariz, los bronquios y los pulmones.",
         rec: ["Beber muchos líquidos","Inhalar vapor, de dos a cuatro veces al día.", "Descansar", "Analgésicos de venta libre (Paracetamol o ibuprofeno)"]
     },
@@ -30,7 +30,7 @@ let enfermedades = [
     {
         name: "Neumonía",
         symp: [0, 0, 1, 0.8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.7, 0, 0.4, 0, 0.7, 0, 0.5, 0.5, 0, 0.7, 0.8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        sympDesc: ["Fiebre".	"Tos con flemas", "Fatiga",	"Irritabilidad","Náuseas"."Escalofríos y sudoración,	"Vómito",	"Diarrea", "Dificultad al respirar", "Dolor en pecho"],
+        sympDesc: ["Fiebre", "Tos con flemas", "Fatiga",	"Irritabilidad","Náuseas","Escalofríos y sudoración",	"Vómito",	"Diarrea", "Dificultad al respirar", "Dolor en pecho"],
         desc: "Es una infección del pulmón que puede ser causada por múltiples microorganismos (bacterias, virus y hongos). Los sacos de aire de los pulmones (llamados 'alvéolos') se llenan de pus y otros líquidos, lo cual dificulta la llegada del oxígeno al torrente sanguíneo. Las neumonías se clasifican según se adquieren en el día a día de una persona (neumonía adquirida en la comunidad) o en un centro sanitario (neumonía hospitalaria).",
         rec: ["Aplicación de antibióticos (prescritos por un médico).", "Aplicación de analgésicos para la fiebre y el malestar.", "Medicamento para la tos."]
     },
