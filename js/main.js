@@ -91,7 +91,6 @@ $(document).on('click', '#saveSymp' , function(){
 });
 
 $(document).on('click', 'label', function() {
-
     let objet = this;
     let idInputSymp = $(this).attr('for');
     let cnt = $(this).parent().get(0);
@@ -114,11 +113,8 @@ $(document).on('click', 'label', function() {
 });
 
 $(document).on('input', '.painLevel', function() {
-
-    // data-sympIdLevel
     let idInputSymp = $(this).data('sympIdLevel');
     $(`#${idInputSymp}`).val($(this).val());
-
     $('#pain').html( $(this).val());
     if ($(this).val() < 0.3) {
       $('#painDesc').html("Algo de molestia");
@@ -128,20 +124,46 @@ $(document).on('input', '.painLevel', function() {
       $('#painDesc').html("Mucha molestia");
     }
 });
-
+                                                                        
 $(document).on('click', '.primaryBtn', function(){
     let countSympts = $('input:checked').length;
-    // countSympts < 15 && alert('Selecciona al menos 15 sintomas 😬');
-    // if (countSympts < 15) return;
+    countSympts < 15 && alert('Selecciona al menos 15 sintomas 😬');
+    if (countSympts < 15) return;
     let arrayValuesSympts = [];
     $('input[type=checkbox]').each(function () {
         let sympt = $(this).get(0);
         let index = parseInt(sympt.dataset.idsymp);
         arrayValuesSympts[index] = sympt.value;
     });
-    // console.table(arrayValuesSympts);
-
+    loadingDots('.primaryBtn', "Preparando Datos");
     diagnostic(arrayValuesSympts, function(data){
+        //    ██████╗ ██╗ █████╗  ██████╗ ███╗   ██╗ ██████╗ ███████╗████████╗██╗ ██████╗███████╗    ██████╗  █████╗ ████████╗ █████╗ 
+        //    ██╔══██╗██║██╔══██╗██╔════╝ ████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔════╝    ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
+        //    ██║  ██║██║███████║██║  ███╗██╔██╗ ██║██║   ██║███████╗   ██║   ██║██║     ███████╗    ██║  ██║███████║   ██║   ███████║
+        //    ██║  ██║██║██╔══██║██║   ██║██║╚██╗██║██║   ██║╚════██║   ██║   ██║██║     ╚════██║    ██║  ██║██╔══██║   ██║   ██╔══██║
+        //    ██████╔╝██║██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗███████║    ██████╔╝██║  ██║   ██║   ██║  ██║
+        //    ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝                                                                                                              
         console.table(data);
+        setTimeout(() => {
+            stopDots('.primaryBtn', "Listo");
+        }, 4000);
     });
 });
+
+var dots;
+function loadingDots(element, text){
+    var dot = "";
+    element = $(element);
+    dots = window.setInterval(function(){
+        if (dot.length > 3)
+            dot = "";
+        else
+            dot += ".";
+        element.empty().append(text+dot);
+    }, 200);
+}
+
+function stopDots(element, text){ 
+    $(element).empty().append(text);
+    clearInterval(dots); 
+}
