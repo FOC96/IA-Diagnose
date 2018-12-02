@@ -1,4 +1,5 @@
 $(document).on('click', '.symptomPill' , function(){
+    $('.extra').load('level.html')
     $(this).toggleClass('selected');
     $(this).toggleClass('default');
 });
@@ -67,6 +68,14 @@ $(document).on('click', '.helpBtn' , function(){
 
 $(document).on('click', '.closeBtn' , function(){
     $('.blackBack').toggleClass('out');
+    $('.popUp').toggleClass('popUpOut');
+    setTimeout(function() {
+        $('.blackBack').remove();}, 1000);
+});
+
+$(document).on('click', '#saveSymp' , function(){
+    $('.blackBack').toggleClass('out');
+    $('.popLevel').toggleClass('popLevelOut');
     setTimeout(function() {
         $('.blackBack').remove();}, 1000);
 });
@@ -80,4 +89,15 @@ $(document).on('click', 'label', function() {
     cntVal = parseInt($(cnt).html());
     cntVal = (classObj) ? cntVal + 1 : cntVal - 1;
     cntObj.html(cntVal);
+});
+
+$(document).on('input', '.painLevel', function() {
+    $('#pain').html( $(this).val());
+    if ($(this).val() < 0.3) {
+      $('#painDesc').html("Algo de molestia");
+    } else if ($(this).val() > 0.8) {
+      $('#painDesc').html("Dolor extremo");
+    } else {
+      $('#painDesc').html("Mucha molestia");
+    }
 });
