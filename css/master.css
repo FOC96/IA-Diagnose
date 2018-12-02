@@ -742,6 +742,7 @@ table {
   width: calc(100% + 40px);
   border-spacing: 0px;
   margin-left: -20px;
+  font-size: 14px;
 }
 
 tr, td {
@@ -783,6 +784,7 @@ tr th:last-child, tr td:last-child {
 
 .sympTable tr td {
   border-bottom: 1px solid #DEDFDF;
+  text-align: center;
 }
 
 tr:hover {
