@@ -1,5 +1,4 @@
 $(document).on('click', '.symptomPill' , function(){
-    $('.extra').load('level.html')
     $(this).toggleClass('selected');
     $(this).toggleClass('default');
 });
@@ -81,17 +80,34 @@ $(document).on('click', '#saveSymp' , function(){
 });
 
 $(document).on('click', 'label', function() {
+
+    let objet = this;
+    let idInputSymp = $(this).attr('for');
     let cnt = $(this).parent().get(0);
     let classObj = $(this).hasClass("selected");
+    //PAIN LEVEL
+    if (classObj){
+        $('.extra').load('level.html', function(){
+            $('#sympSubTitle').empty().append(`¿Qué tanta molestia te da ${objet.textContent} ?`);
+            $('.painLevel').data('sympIdLevel', idInputSymp);
+            $(`#${idInputSymp}`).val(0.1)
+        });
+    }
     cnt = $(cnt).parent().get(0);
     cnt = $(cnt).find(".count.pill").get(0);
     cntObj = $(cnt);
     cntVal = parseInt($(cnt).html());
     cntVal = (classObj) ? cntVal + 1 : cntVal - 1;
+    !classObj && $(`#${idInputSymp}`).val(0);
     cntObj.html(cntVal);
 });
 
 $(document).on('input', '.painLevel', function() {
+
+    // data-sympIdLevel
+    let idInputSymp = $(this).data('sympIdLevel');
+    $(`#${idInputSymp}`).val($(this).val());
+
     $('#pain').html( $(this).val());
     if ($(this).val() < 0.3) {
       $('#painDesc').html("Algo de molestia");
@@ -100,4 +116,10 @@ $(document).on('input', '.painLevel', function() {
     } else {
       $('#painDesc').html("Mucha molestia");
     }
+});
+
+$(document).on('click', '.primaryBtn', function(){
+    $('input:checked').each(function () {
+        console.log($(this).get(0));
+    });
 });
