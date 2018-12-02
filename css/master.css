@@ -709,26 +709,37 @@ input[type='checkbox'] {
 }
 
 table {
-  width: 100%;
+  width: calc(100% + 40px);
   border-spacing: 0px;
+  margin-left: -20px;
 }
 
-tr {
+tr, td {
   height: 40px;
 }
 
-td {
-  height: 40px;
+tr th:first-child, tr td:first-child {
+  padding-left: 20px;
 }
+
+tr th:last-child, tr td:last-child {
+  padding-right: 20px;
+}
+
 
 .tableHeader {
-  background: #DEDFDF;
+  background: white;
   font-family: 700;
   font-size: 14px;
-  color: #1D1D1D;
+  color: gray;
   letter-spacing: 0.26px;
   text-align: center;
   border-spacing: none;
+}
+
+.tableHeader th {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 .diseasesTable tr td:last-child {

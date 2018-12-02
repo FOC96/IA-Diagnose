@@ -17,7 +17,7 @@
         <button type="button" class="helpBtn"></button>
         <div class="flexTwo flexCols flexEnd">
           <h1 class="right">Síntomas</h1>
-          <p class="right">Hola {{ name }}, elecciona los síntomas que experimentas (al menos 15).</p>
+          <p class="right" id="instruction"></p>
         </div>
       </div>
 
@@ -239,8 +239,16 @@
         </div>
       </div>
       <div class="buttonsArea">
-        <button class="primaryBtn" name="button">Comenzar</button>
+        <button class="primaryBtn" name="button">Siguiente</button>
       </div>
     </div>
   </body>
+  <script type="text/javascript">
+  if (localStorage.getItem('name')) {
+    name = localStorage.getItem('name')
+    document.getElementById('instruction').innerHTML = "Hola "+name+", selecciona los síntomas que experimentas (al menos 15)."
+  } else {
+    location.assign('index.html')
+  }
+  </script>
 </html>
