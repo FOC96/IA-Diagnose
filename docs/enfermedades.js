@@ -3,7 +3,7 @@ let enfermedades = [
         name: "Resfriado Común - gripe",
         symp: [0.5, 0.5, 0.3, 0.5, 0.5,	0.5, 0.7,	0.7, 0.7,	0, 0,	0, 0,	0, 0,	0,	0, 0,	0, 0,	0, 0,	0, 0,	0, 0,	0, 0,	0, 0,	0, 0, 0, 0, 0, 0, 0, 0],
         sympDesc: ["Escurrimiento nasal",	"Congestión nasal",	"Fiebre",	"Tos con flemas",	"Tos seca",	"Disminución apetito",	"Dolor de cabeza",	"Dolor muscular",	"Dolor de garganta"],
-        desc: "",
+        desc: "Es una infección causada por virus. Se denomina resfriado común por una buena razón. Hay más de mil millones de resfriados en los Estados Unidos al año. Los resfriados pueden ocurrir en cualquier momento del año, pero son más comunes en invierno o en temporadas de lluvias. Las personas son más contagiosas durante los primeros 2 a 3 días del resfriado. Un resfriado en la mayoría de los casos no es contagioso después de la primera semana.",
         rec: ["Medicamentos de venta libre (antigripales) para controlar los síntomas", "Beber líquidos en abundancia"]
     },
     {
