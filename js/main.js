@@ -125,7 +125,7 @@ $(document).on('input', '.painLevel', function() {
     }
 });
                                                                         
-$(document).on('click', '.primaryBtn', function(){
+$(document).on('click', '#btnCont.primaryBtn', function(){
     let countSympts = $('input:checked').length;
     countSympts < 15 && alert('Selecciona al menos 15 sintomas 😬');
     if (countSympts < 15) return;
