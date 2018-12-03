@@ -7,13 +7,15 @@
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_o5hd5vvqpoqiwwmi.css" />
     <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="./js/main.js" charset="utf-8"></script>
+    <script src="./js/specific_diagnosis.js" charset="utf-8"></script>
     <script src="./docs/enfermedades.js" charset="utf-8"></script>
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
       name="viewport"
     />
   </head>
-  <body class="grayBack">
+  <body class="grayBack" id="specificDiagnosis">
+    <div class="extra"></div>
     <div class="oneContent">
       <div class="flexRow flexSides flexOne topBar">
         <button type="button" class="helpBtn"></button>
@@ -23,65 +25,8 @@
         </div>
       </div>
 
-      <div class="diagnosis">
-        <div class="header">
-          <div class="left">
-            <h2>Otra Enfermedad</h2>
-            <p>32% de probabilidad</p>
-          </div>
-          <div class="right"><button type="button" class="helpBtn"></button></div>
-        </div>
-      </div>
-
-      <div class="diagnosis">
-        <div class="header">
-          <div class="left">
-            <h2>Fiebre Escarlatina</h2>
-            <p>50% de probabilidad</p>
-          </div>
-          <div class="right"><button type="button" class="closeBtnHeader"></button></div>
-        </div>
-
-        <h3>¿Qué es?</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit exercitationem vel fugiat
-          eaque aliquid similique quibusdam, maxime provident in sequi nobis adipisci porro incidunt.
-          Mollitia eos id magni aut aliquid! Saepe aperiam blanditiis modi aspernatur unde rem ipsa,
-          in quas, tempora voluptatum optio? Excepturi sit at explicabo iusto atque corporis molestiae
-          consectetur sapiente! Nobis, provident molestiae! Eveniet, alias nisi. Libero? Tenetur
-          suscipit, at illum debitis nemo quo distinctio harum soluta? Laudantium quo, nam odio
-          distinctio beatae veniam autem maiores, a id dicta voluptatem praesentium asperiores fuga
-          laborum voluptatibus neque ipsam! Vitae, aspernatur, obcaecati nesciunt atque aliquid
-          consequuntur fugit nam deleniti optio eos quia!
-        </p>
-
-        <h3>Tratamiento</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit exercitationem vel fugiat
-          eaque aliquid similique quibusdam, maxime provident in sequi nobis adipisci porro incidunt.
-          Mollitia eos id magni aut aliquid! Saepe aperiam blanditiis modi aspernatur unde rem ipsa,
-          in quas, tempora voluptatum optio? Excepturi sit at explicabo iusto atque corporis molestiae
-          consectetur sapiente! Nobis, provident molestiae! Eveniet, alias nisi. Libero? Tenetur
-          suscipit, at illum debitis nemo quo distinctio harum soluta? Laudantium quo, nam odio
-          distinctio beatae veniam autem maiores, a id dicta voluptatem praesentium asperiores fuga
-          laborum voluptatibus neque ipsam! Vitae, aspernatur, obcaecati nesciunt atque aliquid
-          consequuntur fugit nam deleniti optio eos quia!
-        </p>
-      </div>
-
-      <div class="diagnosis">
-        <div class="header">
-          <div class="left">
-            <h2>Otra Enfermedad</h2>
-            <p>12% de probabilidad</p>
-          </div>
-          <div class="right"><button type="button" class="helpBtn"></button></div>
-        </div>
-      </div>
-
       <div class="buttonsArea">
-        <button class="primaryBtn action disabled"><i class="feather icon-chevron-left"></i></button>
-        <button class="primaryBtn" name="button" id="startBtn">Continuar</button>
+        <button class="primaryBtn" name="button" id="continueBtn">Continuar</button>
       </div>
     </div>
   </body>
