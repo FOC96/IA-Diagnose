@@ -38,7 +38,7 @@ h2 {
 h3 {
   font-weight: 800;
   font-size: 16px;
-  color: #A1A1A1;
+  color: #a1a1a1;
   letter-spacing: 0.3px;
 }
 
@@ -393,7 +393,6 @@ input[type='checkbox'] {
   border: none;
   width: 100%;
 }
-
 .temp::-webkit-slider-thumb {
   height: 30px;
   width: 30px;
@@ -402,27 +401,24 @@ input[type='checkbox'] {
   -webkit-appearance: none;
   margin-top: 8px;
 }
-
 .temp {
   -webkit-appearance: none;
   margin: 5px 10px 20px 5px;
 }
-
-#tempNum, #pain {
+#tempNum,
+#pain {
   font-size: 20px;
 }
-
 @media only screen and (max-width: 768px) {
   .oneContent {
     min-width: 100%;
   }
-
   .nameContainer {
     width: 100%;
   }
 }
-
-.helpBtn {
+.helpBtn,
+.helpBtnHeader {
   width: 30px;
   flex-shrink: 0;
   border: none;
@@ -431,7 +427,6 @@ input[type='checkbox'] {
   height: 30px;
   cursor: pointer;
 }
-
 .closeBtnHeader {
   width: 30px;
   flex-shrink: 0;
@@ -441,7 +436,6 @@ input[type='checkbox'] {
   height: 30px;
   cursor: pointer;
 }
-
 .blackBack {
   position: absolute;
   width: 100%;
@@ -455,7 +449,6 @@ input[type='checkbox'] {
   overflow: scroll;
   transition: 0.6s;
 }
-
 @keyframes fadeIn {
   0% {
     background: rgba(0, 0, 0, 0);
@@ -466,7 +459,6 @@ input[type='checkbox'] {
     opacity: 1;
   }
 }
-
 @keyframes slideUp {
   0% {
     top: 100%;
@@ -475,7 +467,6 @@ input[type='checkbox'] {
     top: 0%;
   }
 }
-
 @keyframes slideUp1 {
   0% {
     top: 0%;
@@ -484,7 +475,6 @@ input[type='checkbox'] {
     top: -100%;
   }
 }
-
 @keyframes slideBtnUp {
   0% {
     top: 100%;
@@ -493,7 +483,6 @@ input[type='checkbox'] {
     top: 60px;
   }
 }
-
 @keyframes fadeOut {
   0% {
     background: rgba(0, 0, 0, 0.25);
@@ -504,7 +493,6 @@ input[type='checkbox'] {
     opacity: 0;
   }
 }
-
 @keyframes slideDown {
   0% {
     top: 0%;
@@ -513,7 +501,6 @@ input[type='checkbox'] {
     top: 100%;
   }
 }
-
 @keyframes slideDown1 {
   0% {
     top: -100%;
@@ -522,7 +509,6 @@ input[type='checkbox'] {
     top: 0%;
   }
 }
-
 @keyframes slideBtnDown {
   0% {
     top: 60px;
@@ -531,31 +517,26 @@ input[type='checkbox'] {
     top: 100%;
   }
 }
-
 .out {
   animation: fadeOut;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-
 .popUpOut {
   animation: slideDown;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-
 .popLevelOut {
   animation: slideUp1;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-
 .out .closeBtn {
   animation: slideDown;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-
 .popUp {
   width: 80%;
   margin: 30px auto;
@@ -570,11 +551,9 @@ input[type='checkbox'] {
   animation: slideUp;
   animation-duration: 1s;
 }
-
 .name {
   margin-top: 70px;
 }
-
 .name > .input-wrapper > label,
 .genre > label,
 .age > label {
@@ -582,7 +561,6 @@ input[type='checkbox'] {
   margin-bottom: 12px;
   font-size: 15px;
 }
-
 .name > .input-wrapper > input[type='text'] {
   width: 300px;
   border-radius: 5px;
@@ -592,33 +570,27 @@ input[type='checkbox'] {
   outline: none;
   border: none;
 }
-
 .name > .input-wrapper > input[type='text']::placeholder {
   color: #c2c2c2;
 }
-
 .genre,
 .age {
   margin-top: 50px;
 }
-
 .genre > .radio-wrapper,
 .age > .radio-wrapper {
   display: inline-block;
   margin-right: 20px;
 }
-
 .genre > label {
   margin-bottom: 12px;
 }
-
 .genre > .radio-wrapper > label > input[type='radio'] {
   position: absolute;
   width: 0;
   height: 0;
   opacity: 0;
 }
-
 .genre > .radio-wrapper > label > input[type='radio'] + img {
   width: 50px;
   height: 50px;
@@ -628,17 +600,14 @@ input[type='checkbox'] {
   transition: 0.2s all linear;
   transform: scale(1);
 }
-
 .genre > .radio-wrapper > label > input[type='radio']:checked + img {
   transform: scale(1.25);
-  background: #00A6B0 !important;
+  background: #00a6b0 !important;
 }
-
 .genre > .radio-wrapper > label > input[type='radio'] + img {
   transform: scale(1);
   background: white;
 }
-
 /* .genre > .radio-wrapper > label > input[type='radio'] + img.boy {
   background: white;
 }
@@ -646,7 +615,6 @@ input[type='checkbox'] {
 .genre > .radio-wrapper > label > input[type='radio'] + img.girl {
   background: white;
 } */
-
 .age > .radio-wrapper > label {
   display: inline-block;
 }
@@ -656,7 +624,6 @@ input[type='checkbox'] {
   visibility: hidden;
   width: 100%;
 }
-
 .age > .radio-wrapper > label > input[type='radio'] + div {
   background: #e5f3f4;
   color: #45a7b1;
@@ -668,12 +635,10 @@ input[type='checkbox'] {
   user-select: none;
   transition: 0.2s all ease-in-out;
 }
-
 .age > .radio-wrapper > label > input[type='radio']:checked + div {
   background: #45a7b1;
   color: #e5f3f4;
 }
-
 .closeBtn {
   height: 30px;
   width: 30px;
@@ -688,13 +653,12 @@ input[type='checkbox'] {
   animation: slideBtnUp;
   animation-duration: 1s;
 }
-
 .topBar {
   margin-bottom: 50px;
 }
-
 .diagnosis {
   position: relative;
+  max-height: 50px;
   left: calc(50% - 350px);
   width: 700px;
   padding: 22px;
@@ -702,62 +666,58 @@ input[type='checkbox'] {
   border-radius: 5px;
   margin-bottom: 25px;
   box-shadow: 2px 2px 3px 2px rgba(197, 197, 197, 0.5);
+  overflow: hidden;
+  transition: 0.35s all linear;
 }
-
+.diagnosis.open {
+  max-height: 800px;
+}
 .diagnosis > .header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-
 .diagnosis > .header > .left > h2 {
   font-size: 21px;
 }
-
 .diagnosis > .header > .left > h2 + p {
   color: #40a9e8;
   font-size: 13px;
   margin-top: 4px;
 }
-
 .diagnosis > h3 {
   color: #a1a1a1;
   margin-top: 30px;
   margin-bottom: 8px;
 }
-
 .diagnosis > h3 + p {
   text-align: justify;
 }
-
 .flexForm {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: space-between;
 }
-
 table {
   width: calc(100% + 40px);
   border-spacing: 0px;
   margin-left: -20px;
   font-size: 14px;
 }
-
-tr, td {
+tr,
+td {
   height: 40px;
 }
-
-tr th:first-child, tr td:first-child {
+tr th:first-child,
+tr td:first-child {
   padding-left: 20px;
 }
-
-tr th:last-child, tr td:last-child {
+tr th:last-child,
+tr td:last-child {
   padding-right: 20px;
 }
-
-
 .tableHeader {
   background: white;
   font-family: 700;
@@ -767,39 +727,32 @@ tr th:last-child, tr td:last-child {
   text-align: center;
   border-spacing: none;
 }
-
 .tableHeader th {
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
 }
-
 .diseasesTable tr td:last-child {
-  border-bottom: 1px solid #DEDFDF;
+  border-bottom: 1px solid #dedfdf;
 }
-
-.diseasesTable tr td:first-child, .sympTable tr td:first-child {
+.diseasesTable tr td:first-child,
+.sympTable tr td:first-child {
   text-align: right;
   padding-right: 10px;
 }
-
 .sympTable tr td {
-  border-bottom: 1px solid #DEDFDF;
+  border-bottom: 1px solid #dedfdf;
   text-align: center;
 }
-
 tr:hover {
   background: rgba(0, 0, 0, 0.05);
 }
-
 .sympTable tr th:first-child {
   width: 45%;
   max-width: 200px;
 }
-
 .sympTable {
   table-layout: fixed;
 }
-
 .sympTable tr :first-child {
   width: 45%;
   max-width: 200px;
@@ -807,29 +760,23 @@ tr:hover {
   overflow: hidden;
   white-space: nowrap;
 }
-
 a {
-  color: #00A6B0;
+  color: #00a6b0;
   font-weight: 700;
   text-decoration: none;
 }
-
 .popUp h1 {
   margin-bottom: 50px;
 }
-
 .popUp .nameCont {
   margin-bottom: 40px;
 }
-
 .popUp h2 {
   margin-top: 40px;
 }
-
 .popUp h3 {
   margin-top: 30px;
 }
-
 .diseaseWrapper {
   width: 130px;
   height: 130px;
@@ -848,30 +795,21 @@ a {
   letter-spacing: 0.3px;
   transition: 0.4s;
 }
-
-.diseaseWrapper input[type="checkbox"] {
+.diseaseWrapper input[type='checkbox'] {
   display: none;
 }
-
-.diseaseWrapper input[type="checkbox"]:checked + .diseaseWrapper {
-  background: rgba(0,166,176,1) !important;
+.diseaseWrapper input[type='checkbox']:checked + .diseaseWrapper {
+  background: rgba(0, 166, 176, 1) !important;
 }
-
 .painLevel::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
-  background-image: linear-gradient(
-    90deg,
-    #64ef00 15%,
-    #ffc000 25%,
-    #ff0000 100%
-  );
+  background-image: linear-gradient(90deg, #64ef00 15%, #ffc000 25%, #ff0000 100%);
   border-radius: 20px;
   border: none;
   width: 100%;
 }
-
 .painLevel::-webkit-slider-thumb {
   height: 30px;
   width: 30px;
@@ -880,16 +818,13 @@ a {
   -webkit-appearance: none;
   margin-top: 8px;
 }
-
 .painLevel {
   -webkit-appearance: none;
   margin: 5px 10px 20px 5px;
 }
-
 .popLevel h1 {
   margin-bottom: 0px;
 }
-
 .popLevel {
   width: 80%;
   margin: 80px auto;
