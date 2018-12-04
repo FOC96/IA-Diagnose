@@ -164,16 +164,17 @@ $(document).on('click', '#btnCont.primaryBtn', function() {
 });
 
 $(document).on('click', '#startDiagnoseBtn', function() {
-  let inputs = $('input:checked');
-  if (inputs.length < 2) {
+  let labels = $('.selected');
+  if (labels.length < 2) {
     alert('Tienes que seleccionar al menos 2 enfermedades');
     return;
   }
+  let inputs = [];
+  labels.map(element => inputs.push(labels[element].nextElementSibling));
   let diseases = [];
   loadingDots('.primaryBtn', 'Guardando');
-  console.log(inputs);
-  inputs.map(input => diseases.push(parseInt(inputs[input].value)));
-  console.table(diseases);
+  inputs.map(input => diseases.push(input.dataset.simpt));
+  localStorage.removeItem("selected");
   localStorage.setItem('selected', JSON.stringify(diseases));
   setTimeout(() => {
     window.location.href = 'specific_diagnosis.html';
