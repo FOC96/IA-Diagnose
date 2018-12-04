@@ -5,24 +5,14 @@ $(document).ready(function() {
     var diseases = [];
     var card = '';
     var total = 0;
-
-    diseases = result.filter(function(disease, index) {
-      for (var i = 0; i < selected.length; i++) {
-        if (disease.id === selected[i]) {
-          total += disease.total;
-          return true;
-        }
-      }
-    });
-
+    diseases = result.filter(disease => -1 !== selected.indexOf(disease.id));
+    total = diseases.reduce((sum, diseases) => sum + diseases.total, 0);
     diseases.forEach(function(disease) {
-      var probability = Math.round((disease.total * 100) / total);
-      var rec = '';
-
-      enfermedades[disease.id].rec.filter(function(recommendation) {
+      let probability = Math.round((disease.total * 100) / total);
+      let rec = '';
+      enfermedades[disease.id].rec.forEach(function(recommendation) {
         rec += `- ${recommendation} <br/>`;
       });
-
       card += `<div class="diagnosis">
                   <div class="header">
                     <div class="left">
@@ -37,8 +27,8 @@ $(document).ready(function() {
                   <p>${rec}</p>
                 </div>`;
     });
-
-    $('div.oneContent').append(card);
+    $('div.oneContent')
+      .append(card);
   });
 
   $(document).on('click', '.helpBtnHeader', function() {

@@ -4,13 +4,9 @@ $(document).ready(function() {
     var possibleDisease = result[0];
     var disease = enfermedades[possibleDisease.id];
     var total = 0;
-
     result.forEach(disease => {
       total += disease.total;
     });
-
-    console.log(total);
-
     var probability = Math.round((possibleDisease.total * 100) / total);
 
     var card = `<div class="diagnosis open">
@@ -30,7 +26,6 @@ $(document).ready(function() {
   });
 
   $('#finishBtn').on('click', function() {
-    localStorage.clear();
     $(location).attr('href', 'index.html');
   });
 });
