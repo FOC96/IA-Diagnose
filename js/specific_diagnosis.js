@@ -6,14 +6,24 @@ $(document).ready(function() {
     var card = '';
     var total = 0;
     diseases = result.filter(disease => -1 !== selected.indexOf(disease.id));
+    // ██╗   ██╗███╗   ███╗██████╗ ██████╗  █████╗ ██╗     
+    // ██║   ██║████╗ ████║██╔══██╗██╔══██╗██╔══██╗██║     
+    // ██║   ██║██╔████╔██║██████╔╝██████╔╝███████║██║     
+    // ██║   ██║██║╚██╔╝██║██╔══██╗██╔══██╗██╔══██║██║     
+    // ╚██████╔╝██║ ╚═╝ ██║██████╔╝██║  ██║██║  ██║███████╗
+    //  ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+                                                        
+    probabilityOf = result.filter(disease => disease.total > .8);
+
     total = diseases.reduce((sum, diseases) => sum + diseases.total, 0);
-    diseases.forEach(function(disease) {
-      let probability = Math.round((disease.total * 100) / total);
-      let rec = '';
-      enfermedades[disease.id].rec.forEach(function(recommendation) {
-        rec += `- ${recommendation} <br/>`;
-      });
-      card += `<div class="diagnosis">
+    if (probabilityOf > 1){
+      diseases.forEach(function (disease) {
+        let probability = Math.round((disease.total * 100) / total);
+        let rec = '';
+        enfermedades[disease.id].rec.forEach(function (recommendation) {
+          rec += `- ${recommendation} <br/>`;
+        });
+        card += `<div class="diagnosis">
                   <div class="header">
                     <div class="left">
                       <h2>${enfermedades[disease.id].name}</h2>
@@ -26,8 +36,19 @@ $(document).ready(function() {
                   <h3>Tratamiento</h3>
                   <p>${rec}</p>
                 </div>`;
-    });
-    $('div.oneContent')
+      });
+    } else {
+      card = `<div class="diagnosis">
+                  <div class="header">
+                    <div class="left">
+                      <h2>No pudimos diagnosticar alguna enfermedad 🤔</h2>
+                      <p>Con los valores que nos has dado no pudimos obtener datos correctos</p>
+                    </div>
+                  </div>
+                </div>`;
+    }
+    $('div#inner')
+      .empty()
       .append(card);
   });
 

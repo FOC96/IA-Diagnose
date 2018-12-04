@@ -173,7 +173,7 @@ $(document).on('click', '#startDiagnoseBtn', function() {
   labels.map(element => inputs.push(labels[element].nextElementSibling));
   let diseases = [];
   loadingDots('.primaryBtn', 'Guardando');
-  inputs.map(input => diseases.push(input.dataset.simpt));
+  diseases = inputs.map(input => parseInt(input.dataset.simpt));
   localStorage.removeItem("selected");
   localStorage.setItem('selected', JSON.stringify(diseases));
   setTimeout(() => {
