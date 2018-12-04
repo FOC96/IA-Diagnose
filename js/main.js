@@ -65,6 +65,10 @@ $(document).on('click', '#aYouBtn', function() {
   }
 });
 
+$(document).on('click', '#backDiagnoseBtn', function() {
+    location.assign('elements.html');
+});
+
 $(document).on('click', '.diseaseWrapper', function() {
   $(this).toggleClass('default');
   $(this).toggleClass('selected');
@@ -164,25 +168,21 @@ $(document).on('click', '#btnCont.primaryBtn', function() {
 });
 
 $(document).on('click', '#startDiagnoseBtn', function() {
-  var inputs = document.querySelectorAll('.diseaseWrapper + input:checked');
-
-  if (inputs.length > 0) {
-    var diseases = [];
-
-    loadingDots('.primaryBtn', 'Guardando');
-
-    inputs.forEach(input => {
-      diseases.push(parseInt(input.value));
-    });
-
-    localStorage.setItem('selected', JSON.stringify(diseases));
-
-    setTimeout(() => {
-      window.location.href = 'specific_diagnosis.html';
-    }, 2500);
-  } else {
-    alert('Tienes que seleccionar al menos 1 enfermedad');
+  let labels = $('.selected');
+  if (labels.length < 2) {
+    alert('Tienes que seleccionar al menos 2 enfermedades');
+    return;
   }
+  let inputs = [];
+  labels.map(element => inputs.push(labels[element].nextElementSibling));
+  let diseases = [];
+  loadingDots('.primaryBtn', 'Guardando');
+  diseases = inputs.map(input => parseInt(input.dataset.simpt));
+  localStorage.removeItem("selected");
+  localStorage.setItem('selected', JSON.stringify(diseases));
+  setTimeout(() => {
+    window.location.href = 'specific_diagnosis.html';
+  }, 2500);
 });
 
 var dots;
@@ -192,8 +192,9 @@ function loadingDots(element, text) {
   dots = window.setInterval(function() {
     if (dot.length > 3) dot = '';
     else dot += '.';
-    element.empty().append(text + dot);
-  }, 200);
+    element.empty()
+      .append(text + dot);
+  }, 400);
 }
 
 function stopDots(element, text) {

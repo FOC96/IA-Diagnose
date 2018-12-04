@@ -5,25 +5,26 @@ $(document).ready(function() {
     var diseases = [];
     var card = '';
     var total = 0;
+    diseases = result.filter(disease => -1 !== selected.indexOf(disease.id));
+    // ██╗   ██╗███╗   ███╗██████╗ ██████╗  █████╗ ██╗
+    // ██║   ██║████╗ ████║██╔══██╗██╔══██╗██╔══██╗██║
+    // ██║   ██║██╔████╔██║██████╔╝██████╔╝███████║██║
+    // ██║   ██║██║╚██╔╝██║██╔══██╗██╔══██╗██╔══██║██║
+    // ╚██████╔╝██║ ╚═╝ ██║██████╔╝██║  ██║██║  ██║███████╗
+    //  ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
-    diseases = result.filter(function(disease, index) {
-      for (var i = 0; i < selected.length; i++) {
-        if (disease.id === selected[i]) {
-          total += disease.total;
-          return true;
-        }
-      }
-    });
+    probabilityOf = result.filter(disease => disease.total > .8);
 
-    diseases.forEach(function(disease) {
-      var probability = Math.round((disease.total * 100) / total);
-      var rec = '';
+    total = result.reduce((sum, diseases) => sum + diseases.total, 0);
 
-      enfermedades[disease.id].rec.filter(function(recommendation) {
-        rec += `- ${recommendation} <br/>`;
-      });
-
-      card += `<div class="diagnosis">
+    if (probabilityOf > 1){
+      diseases.forEach(function (disease) {
+        let probability = Math.round((disease.total * 100) / total);
+        let rec = '';
+        enfermedades[disease.id].rec.forEach(function (recommendation) {
+          rec += `- ${recommendation} <br/>`;
+        });
+        card += `<div class="diagnosis">
                   <div class="header">
                     <div class="left">
                       <h2>${enfermedades[disease.id].name}</h2>
@@ -36,9 +37,26 @@ $(document).ready(function() {
                   <h3>Tratamiento</h3>
                   <p>${rec}</p>
                 </div>`;
-    });
-
-    $('div.oneContent').append(card);
+      });
+      $('.buttonsArea')
+        .empty()
+        .append('<button class="primaryBtn" name="button" id="continueBtn">Continuar</button>');
+    } else {
+      card = `<div class="diagnosis">
+                  <div class="header">
+                    <div class="left">
+                      <h2>No pudimos diagnosticar alguna enfermedad 🤔</h2>
+                      <p>El cuadro de síntomas no corresponde con alguna enfermedad registrada en el sistema comprueba las enfermedades seleccionadas o verifica los síntomas</p>
+                    </div>
+                  </div>
+                </div>`;
+      $('.buttonsArea')
+        .empty()
+        .append('<button class="primaryBtn" name="button" id="backBtn">Regresar</button>');
+    }
+    $('div#inner')
+      .empty()
+      .append(card);
   });
 
   $(document).on('click', '.helpBtnHeader', function() {
@@ -51,7 +69,6 @@ $(document).ready(function() {
     $(this).removeClass('helpBtnHeader');
     $(this).addClass('closeBtnHeader');
   });
-
   $(document).on('click', '.closeBtnHeader', function() {
     $(this)
       .parent()
@@ -62,8 +79,10 @@ $(document).ready(function() {
     $(this).removeClass('closeBtnHeader');
     $(this).addClass('helpBtnHeader');
   });
-
   $(document).on('click', '#continueBtn', function() {
     window.location.href = 'diagnosis.html';
+  });
+  $(document).on('click', '#backBtn', function() {
+    window.location.href = 's2.html';
   });
 });
