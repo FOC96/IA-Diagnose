@@ -840,3 +840,17 @@ a {
   animation: slideDown1;
   animation-duration: 1s;
 }
+
+#inner {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-basis: 100%;
+  background: red;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#inner .diagnosis {
+  left: 0;
+}
