@@ -854,3 +854,20 @@ a {
 #inner .diagnosis {
   left: 0;
 }
+
+.grayBtn {
+  background: #959595;
+  margin-right: 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 30px;
+  box-sizing: border-box;
+}
+
+.grayBtn img {
+  height: 10px;
+}
