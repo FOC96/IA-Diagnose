@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="./css/master.css" />
     <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="./js/main.js" charset="utf-8"></script>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
   </head>
   <body class="grayBack">
     <div class="oneContent">
@@ -20,18 +23,20 @@
       <div class="name">
         <div class="input-wrapper">
           <label for="name">¿Cuál es tu nombre?</label>
-          <input type="text" name="name" placeholder="Tu nombre..." id="userName"/>
+          <input type="text" name="name" placeholder="Tu nombre..." id="userName" />
         </div>
       </div>
 
       <div class="genre">
         <label>¿Cuál es tu género?</label>
         <div class="radio-wrapper">
-          <label> <input type="radio" name="genre" /> <img src="media/boy.svg" class="boy" /> </label>
+          <label>
+            <input type="radio" name="genre" value="boy" /> <img src="media/boy.svg" class="boy" />
+          </label>
         </div>
         <div class="radio-wrapper">
           <label>
-            <input type="radio" name="genre" /> <img src="media/girl.svg" class="girl" />
+            <input type="radio" name="genre" value="girl" /> <img src="media/girl.svg" class="girl" />
           </label>
         </div>
       </div>
@@ -40,31 +45,31 @@
         <label>¿A qué grupo de edad perteneces?</label>
         <div class="radio-wrapper">
           <label>
-            <input type="radio" name="age" />
+            <input type="radio" name="age" value="<12" />
             <div class="age-text">Menores a 12 años</div>
           </label>
         </div>
         <div class="radio-wrapper">
           <label>
-            <input type="radio" name="age" />
+            <input type="radio" name="age" value="12-18" />
             <div class="age-text">12 a 18 años</div>
           </label>
         </div>
         <div class="radio-wrapper">
           <label>
-            <input type="radio" name="age" />
+            <input type="radio" name="age" value="19-36" />
             <div class="age-text">19 a 36 años</div>
           </label>
         </div>
         <div class="radio-wrapper">
           <label>
-            <input type="radio" name="age" />
+            <input type="radio" name="age" value="36-59" />
             <div class="age-text">36 a 59 años</div>
           </label>
         </div>
         <div class="radio-wrapper">
           <label>
-            <input type="radio" name="age" />
+            <input type="radio" name="age" value=">60" />
             <div class="age-text">60 años y mayores</div>
           </label>
         </div>

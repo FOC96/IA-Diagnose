@@ -1,27 +1,38 @@
 $(document).ready(function() {
   $(window).on('load', function() {
+    var name = localStorage.getItem('name');
     var result = JSON.parse(localStorage.getItem('result'));
     var selected = JSON.parse(localStorage.getItem('selected'));
-    var diseases = [];
+
+    if (!name) {
+      alert('No has iniciado el proceso de diagnóstico');
+      $(location).attr('href', 'about_you.html');
+      return;
+    }
+
+    if (!selected) {
+      alert('No has seleccionado las enfermedades que crees tener');
+      $(location).attr('href', 's2.html');
+      return;
+    }
+
     var card = '';
-    var total = 0;
-    diseases = result.filter(disease => -1 !== selected.indexOf(disease.id));
+    var diseases = result.filter(disease => -1 !== selected.indexOf(disease.id));
+    var total = result.reduce((sum, diseases) => sum + diseases.total, 0);
     // ██╗   ██╗███╗   ███╗██████╗ ██████╗  █████╗ ██╗
     // ██║   ██║████╗ ████║██╔══██╗██╔══██╗██╔══██╗██║
     // ██║   ██║██╔████╔██║██████╔╝██████╔╝███████║██║
     // ██║   ██║██║╚██╔╝██║██╔══██╗██╔══██╗██╔══██║██║
     // ╚██████╔╝██║ ╚═╝ ██║██████╔╝██║  ██║██║  ██║███████╗
     //  ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+    probabilityOf = result.filter(disease => disease.total > 0.8);
+    console.log(probabilityOf);
 
-    probabilityOf = result.filter(disease => disease.total > .8);
-    console.log(probabilityOf)
-    total = result.reduce((sum, diseases) => sum + diseases.total, 0);
-
-    if (probabilityOf.length > 1){
-      diseases.forEach(function (disease) {
+    if (probabilityOf.length > 1) {
+      diseases.forEach(disease => {
         let probability = Math.round((disease.total * 100) / total);
         let rec = '';
-        enfermedades[disease.id].rec.forEach(function (recommendation) {
+        enfermedades[disease.id].rec.forEach(function(recommendation) {
           rec += `- ${recommendation} <br/>`;
         });
         card += `<div class="diagnosis">
@@ -80,9 +91,10 @@ $(document).ready(function() {
     $(this).addClass('helpBtnHeader');
   });
   $(document).on('click', '#continueBtn', function() {
-    window.location.href = 'diagnosis.html';
+    $(location).attr('href', 'diagnosis.html');
   });
   $(document).on('click', '#backBtn', function() {
-    window.location.href = 's2.html';
+    localStorage.clear();
+    $(location).attr('href', 's2.html');
   });
 });

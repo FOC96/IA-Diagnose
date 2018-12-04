@@ -56,17 +56,27 @@ $(document).on('click', '#startBtn', function() {
 
 $(document).on('click', '#aYouBtn', function() {
   name = $('#userName').val();
+  genre = $('input[name="genre"]:checked').val();
+  age = $('input[name="age"]:checked').val();
 
-  if (name == '') {
-    alert('No nos has dicho tu nombre 🙄');
+  if (!isFieldEmpty(name)) {
+    if (!isFieldEmpty(genre)) {
+      if (!isFieldEmpty(age)) {
+        location.assign('elements.html');
+        localStorage.setItem('name', name);
+      } else {
+        alert('No has seleccionado tu edad 🙄');
+      }
+    } else {
+      alert('No has seleccionado tu género 🙄');
+    }
   } else {
-    location.assign('elements.html');
-    localStorage.setItem('name', name);
+    alert('No nos has dicho tu nombre 🙄');
   }
 });
 
 $(document).on('click', '#backDiagnoseBtn', function() {
-    location.assign('elements.html');
+  location.assign('elements.html');
 });
 
 $(document).on('click', '.diseaseWrapper', function() {
@@ -139,7 +149,7 @@ $(document).on('input', '.painLevel', function() {
 
 $(document).on('click', '#btnCont.primaryBtn', function() {
   let countSympts = $('input:checked').length;
-  console.log(countSympts  );
+  console.log(countSympts);
 
   countSympts < 15 && alert('Selecciona al menos 15 sintomas 😬');
   if (countSympts < 15) return;
@@ -162,7 +172,7 @@ $(document).on('click', '#btnCont.primaryBtn', function() {
 
     setTimeout(() => {
       stopDots('.primaryBtn', 'Listo');
-      window.location.href = 's2.html';
+      $(location).attr('href', 's2.html');
     }, 4000);
   });
 });
@@ -178,10 +188,10 @@ $(document).on('click', '#startDiagnoseBtn', function() {
   let diseases = [];
   loadingDots('.primaryBtn', 'Guardando');
   diseases = inputs.map(input => parseInt(input.dataset.simpt));
-  localStorage.removeItem("selected");
+  localStorage.removeItem('selected');
   localStorage.setItem('selected', JSON.stringify(diseases));
   setTimeout(() => {
-    window.location.href = 'specific_diagnosis.html';
+    $(location).attr('href', 'specific_diagnosis.html');
   }, 2500);
 });
 
@@ -192,8 +202,7 @@ function loadingDots(element, text) {
   dots = window.setInterval(function() {
     if (dot.length > 3) dot = '';
     else dot += '.';
-    element.empty()
-      .append(text + dot);
+    element.empty().append(text + dot);
   }, 400);
 }
 
@@ -202,4 +211,12 @@ function stopDots(element, text) {
     .empty()
     .append(text);
   clearInterval(dots);
+}
+
+function isFieldEmpty(field) {
+  if (field === '' || field === null || field === undefined) {
+    return true;
+  } else {
+    return false;
+  }
 }
