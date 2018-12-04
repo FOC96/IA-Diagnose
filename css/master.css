@@ -375,6 +375,7 @@ input[type='checkbox'] {
   align-items: flex-start;
   justify-content: center;
   background-image: linear-gradient(-180deg, rgba(250, 250, 250, 0) 0%, #fafafa 68%);
+  z-index: 2;
 }
 
 .temp::-webkit-slider-runnable-track {
