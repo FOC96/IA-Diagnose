@@ -30,6 +30,12 @@ $(document).ready(function() {
                 </div>`;
     });
 
+    let prob = Math.round((psoibleScoreH * 100) / total);
+
+    if (prob < 50){
+      alert("El resultado Obtenido no es muy confliable dada su probabilidad 🏥💊");
+    }
+
     $('div#inner')
       .empty()
       .append(card);
