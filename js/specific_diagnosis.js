@@ -14,10 +14,10 @@ $(document).ready(function() {
     //  ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
     probabilityOf = result.filter(disease => disease.total > .8);
-
+    console.log(probabilityOf)
     total = result.reduce((sum, diseases) => sum + diseases.total, 0);
 
-    if (probabilityOf > 1){
+    if (probabilityOf.length > 1){
       diseases.forEach(function (disease) {
         let probability = Math.round((disease.total * 100) / total);
         let rec = '';
