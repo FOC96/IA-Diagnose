@@ -22,7 +22,9 @@ $(document).ready(function() {
             <p>${disease.rec}</p>
           </div>`;
 
-    $('.oneContent').append(card);
+    $('div#inner')
+      .empty()
+      .append(card);
   });
 
   $('#finishBtn').on('click', function() {
