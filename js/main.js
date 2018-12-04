@@ -65,6 +65,10 @@ $(document).on('click', '#aYouBtn', function() {
   }
 });
 
+$(document).on('click', '#backDiagnoseBtn', function() {
+    location.assign('elements.html');
+});
+
 $(document).on('click', '.diseaseWrapper', function() {
   $(this).toggleClass('default');
   $(this).toggleClass('selected');

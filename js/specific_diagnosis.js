@@ -38,15 +38,21 @@ $(document).ready(function() {
                   <p>${rec}</p>
                 </div>`;
       });
+      $('.buttonsArea')
+        .empty()
+        .append('<button class="primaryBtn" name="button" id="continueBtn">Continuar</button>');
     } else {
       card = `<div class="diagnosis">
                   <div class="header">
                     <div class="left">
                       <h2>No pudimos diagnosticar alguna enfermedad 🤔</h2>
-                      <p>Con los valores que nos has dado no pudimos obtener datos correctos</p>
+                      <p>El cuadro de síntomas no corresponde con alguna enfermedad registrada en el sistema comprueba las enfermedades seleccionadas o verifica los síntomas</p>
                     </div>
                   </div>
                 </div>`;
+      $('.buttonsArea')
+        .empty()
+        .append('<button class="primaryBtn" name="button" id="backBtn">Regresar</button>');
     }
     $('div#inner')
       .empty()
@@ -63,7 +69,6 @@ $(document).ready(function() {
     $(this).removeClass('helpBtnHeader');
     $(this).addClass('closeBtnHeader');
   });
-
   $(document).on('click', '.closeBtnHeader', function() {
     $(this)
       .parent()
@@ -74,8 +79,10 @@ $(document).ready(function() {
     $(this).removeClass('closeBtnHeader');
     $(this).addClass('helpBtnHeader');
   });
-
   $(document).on('click', '#continueBtn', function() {
     window.location.href = 'diagnosis.html';
+  });
+  $(document).on('click', '#backBtn', function() {
+    window.location.href = 's2.html';
   });
 });
